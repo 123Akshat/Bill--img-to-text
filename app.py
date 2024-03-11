@@ -24,7 +24,7 @@ def process_image():
     # You can use libraries like OpenCV or PIL to handle image processing tasks
     
     data = ocr(image)
-    data = pipeline.send_message(data + "\n Seeing this data, extract a list of items from the receipt and put them in a json format like this: {\"items\": {\"item1\": item1_price , \"item2\": item1_price, \"item3\": item1_price}}  Use the exact item names used in the text. If you can't find any items, just put an empty json like this: {\"items\": {}}")
+    data = pipeline.send_message(data + "\n Seeing this data, extract a list of items from the receipt and put them in a json format like this: {\"items\": {\"item1\": item1_price , \"item2\": item1_price, \"item3\": item1_price}}  Use the exact item names used in the text. If you can't find any items, just put an empty json like this: {\"items\": {}} also IF there are taxes or discounts, add them to the json as well. If you can't find any taxes or discounts, just put an empty json like this: {\"taxes\": {}, \"discounts\": {}}")
     data = filter_json(data.text)
     return jsonify(data)
 
