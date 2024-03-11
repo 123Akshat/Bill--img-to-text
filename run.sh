@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Activate the venv
-source "venv/bin/activate"
+source "myenv/bin/activate"
 
 # Run the app.py script
-python app.py
+python3 app.py
 
 # Deactivate the venv
 deactivate
